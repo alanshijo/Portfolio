@@ -1,22 +1,68 @@
 import React from "react";
-import InstagramIcon from "@material-ui/icons/Instagram";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import "../styles/Footer.css";
+import { Container, Row, Col } from "react-bootstrap";
+import {
+  AiFillGithub,
+  AiFillInstagram,
+} from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
+  let date = new Date();
+  let year = date.getFullYear();
   return (
-    <div className="footer">
-      <div className="socialMedia">
-        <a href="https://www.instagram.com/a1an_shijo/" target="_blank" rel="noopener noreferrer">
-          <InstagramIcon /></a>
-        <a href="https://twitter.com/alanshijoatkl" target="_blank" rel="noopener noreferrer">
-          <TwitterIcon /></a>
-        <a href="https://www.linkedin.com/in/a1an-shijo/" target="_blank" rel="noopener noreferrer">
-          <LinkedInIcon /></a>
-      </div>
-      <p> &copy; 2023 alanshijo.online</p>
-    </div>
+    <Container fluid className="footer">
+      <Row>
+        <Col md="4" className="footer-copywright">
+        </Col>
+        <Col md="4" className="footer-copywright">
+          <h3>Copyright © {year} Alan</h3>
+        </Col>
+        <Col md="4" className="footer-body">
+          <ul className="footer-icons">
+            <li className="social-icons">
+              <a
+                href="https://github.com/alanshijo"
+                style={{ color: "white" }}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <AiFillGithub />
+              </a>
+            </li>
+            {/* <li className="social-icons">
+              <a
+                href="https://twitter.com/Soumyajit4419"
+                style={{ color: "white" }}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <AiOutlineTwitter />
+              </a>
+            </li> */}
+            <li className="social-icons">
+              <a
+                href="https://www.linkedin.com/in/a1an-shijo/"
+                style={{ color: "white" }}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="https://www.instagram.com/a1an_shijo"
+                style={{ color: "white" }}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <AiFillInstagram />
+              </a>
+            </li>
+          </ul>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
